@@ -1,7 +1,6 @@
+# $Env:STAGE = "PROD"; python .\script_py\env_var.py
 import os
 
-staging = input("STAGE=")
-os.environ["STAGE"] = staging
 stage = (os.getenv("STAGE") or "development").upper()
 
 output = "We're running in %s" % stage
