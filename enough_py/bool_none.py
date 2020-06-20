@@ -1,0 +1,6 @@
+print(True)
+print(False)
+print(bool("bob"))
+print(bool(""))
+print(bool(0))
+print(None)
