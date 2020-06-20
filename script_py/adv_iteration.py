@@ -7,6 +7,6 @@ parser.add_argument('snippet', help='partial (or complete) string to search for 
 args = parser.parse_args()
 snippet = args.snippet.lower()
 
-words = open('./script_py/words').readlines()
+words = open('./words').readlines()
 
 print([word.strip() for word in words if snippet in word.lower()])
