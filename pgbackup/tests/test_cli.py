@@ -1,8 +1,8 @@
-import pytest
 import sys
 module_path = '\\'.join(sys.path[0].split('\\')[:-2])
 sys.path.append(module_path)
 
+import pytest
 from pgbackup import cli
 
 url = "postgres://postgres:postgres@localhost:5432/sample"
