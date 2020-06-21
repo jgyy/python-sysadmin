@@ -12,5 +12,10 @@ setup(
     author_email='jgyy@email.com',
     packages=find_packages('pgbackup'),
     package_dir={'': 'pgbackup'},
-    install_requires=[]
+    install_requires=['boto3'],
+    entry_points={
+        'console_scripts': [
+            'pgbackup=pgbackup.cli:main',
+        ]
+    }
 )

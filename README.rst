@@ -46,3 +46,10 @@ If virtualenv isn't active then use:
 ::
 
     $ pipenv run make
+
+Running Scripts
+---------------
+
+::
+
+    $ python -m pgbackup --driver local ./local-dump.sql postgres://postgres:postgres@127.0.0.1:5432/sample
