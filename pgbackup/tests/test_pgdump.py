@@ -22,6 +22,6 @@ def test_dump_handles_oserror(mocker):
     """
     pgdump.dump returns a reasonable error if pg_dump isn't installed.
     """
-    mocker.patch('subprocess.Poen', side_effect=OSError("no such file"))
-    with pytest.raise(SystemExit):
+    mocker.patch('subprocess.Popen', side_effect=OSError("no such file"))
+    with pytest.raises(SystemExit):
         pgdump.dump(url)
