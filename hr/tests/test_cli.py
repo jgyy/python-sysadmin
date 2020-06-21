@@ -4,6 +4,7 @@ sys.path.append(module_path)
 
 import pytest
 from hr import cli
+some_path = '/some/path'
 
 @pytest.fixture()
 def parser():
@@ -20,16 +21,16 @@ def test_parser_succeeds_with_a_path(parser):
     """
     With a path, the parser should exit with an error.
     """
-    args = parser.parse_args(['/some/path'])
-    assert args.path == '/some/path'
+    args = parser.parse_args([some_path])
+    assert args.path == some_path
 
 def test_parser_export_flag(parser):
     """
     The `export` value should default to False, but set
     to True when passed to the parser.
     """
-    args = parser.parse_args(['/some/path'])
+    args = parser.parse_args([some_path])
     assert args.export == False
 
-    args = parser.parse_args(['--export', '/some/path'])
+    args = parser.parse_args(['--export', some_path])
     assert args.export == True
